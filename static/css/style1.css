@@ -1,0 +1,569 @@
+@import url("css.css");
+
+
+@media(max-width: 900px) {
+  .profile-card {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .MouseGS {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+:root {
+  /* 导航文字的颜色 */
+  --primary-dark-color: rgba(206, 255, 173, 0.937);
+  --text-color-gray: rgb(255, 255, 255);
+  --fubiaoti-text-color:rgb(255, 251, 184);
+  --text-color-light-gray: #c1c7cb;
+  --text-color-dark-gray: rgb(255, 255, 255);
+  --h1-text-colorL:rgb(236, 255, 116);
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  /* 栅格布局，居中卡片 */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* 卡片的大小和栅格分配 */
+.profile-card {
+  display: grid;
+
+  /*平均分12格*/
+  /*grid-template-columns: repeat(12, 1fr);*/
+
+  /* 每一格单独设置宽度 这里可以单独给每一列设置px宽度*/
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  column-gap: 12px;
+  width: 600px;
+  height: 390px;
+  box-shadow: 0px 0px 22px 3px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(1px);
+}
+/* 卡片左侧内容 占据1-7列位置*/
+.content {
+  grid-column: 1 / 8;
+  padding: 52px 30px 40px 45px;
+  position: relative;
+}
+
+/* 卡片内容之间的间隙 占据第8列位置
+.spacer {
+  grid-column: 8 /9;
+} */
+
+/* 卡片右侧内容 占据8-12列位置*/
+.profile-image {
+  grid-column: 8 / 13;
+  max-width: 220px;
+  height: 100%;
+  overflow: hidden;
+  align-self: center;
+  justify-self: end;
+  margin-right: 30px;
+  padding: 50% 0px;
+}
+
+.zhengwen{
+  white-space: wrap;
+  text-indent: 2em;
+  /* 设置正文行高 */
+  line-height: 22px;
+}
+
+
+.profile-image img {
+  /* 图片放大，然后只显示一部分 */
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* 文字投影 文字阴影效果 */
+.zhengwentouyin{
+  text-shadow: 2px 2px 3px rgb(255, 135, 135);
+}
+.zhengwentouyin2{
+  text-shadow: 2px 2px 3px rgb(138, 177, 255);
+}
+.zhengwentouyin3{
+  text-shadow: 2px 2px 4px rgba(93, 255, 236, 0.947);
+}
+.zhengwentouyin4{
+  text-shadow: 6px 4px 5px rgba(214, 144, 255, 0.84);
+}
+
+
+/*流光标题*/
+.h1color{
+  color:var(--biaotiyanse);
+  margin: 3px 0px 14px 0px;
+  white-space: nowrap;
+}
+
+.h1color span {
+  animation-delay: 0s;
+  color:rgba(255,255,255,0);
+  animation: start 1s ease-in-out infinite alternate;
+  font-size: 38px;
+
+}
+
+/* 更改流光标题的发光颜色 */
+@keyframes start {
+  to {
+      text-shadow: 0 0 5px #ffffff,
+          0 0 5px #fff,
+          0 0 10px #cdf4ff,
+          0 0 18px #61c5ff,
+          0 0 20px #a6f0ff,
+          0 0 40px #1070ff; 
+          /*原颜色：
+          0 0 18px #126fcc,
+          0 0 20px #126fcc,
+          0 0 40px #126fcc; */
+      color: #fff;
+  }
+}
+
+.h1color span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.h1color span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.h1color span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.h1color span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.h1color span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.h1color span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.h1color span:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.h1color span:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.h1color span:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.h1color span:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.h1color span:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+.h1color span:nth-child(12) {
+  animation-delay: 1.2s;
+}
+/* 分割线 */
+
+nav {
+  margin-bottom: 24px;
+  display: flex;
+  position: relative;
+}
+
+nav a {
+  color: var(--text-color-gray);
+  text-decoration: none;
+}
+
+nav a.active {
+  /* 导航文字的颜色 */
+  color: var(--primary-dark-color);
+}
+
+nav a:not(:last-child) {
+  margin-right: 40px;
+}
+
+nav .indicator {
+  height: 2px;
+  background: var(--primary-dark-color);
+  bottom: -7px;
+  left: 0;
+  position: absolute;
+  transition: 0.4s;
+}
+
+.content section {
+  /* 堆叠个人简介和工作经历部分 */
+  position: absolute;
+  /* 默认都不显示  */
+  opacity: 0;
+  /* 淡出淡入效果 */
+  transition: 0.3s ease-out;
+}
+
+.content section.active-section {
+  /* 显示active-section */
+
+  /* 设置内容框的宽高大小 */
+  height: 250px;
+  width: 300px;
+  
+  opacity: 1;
+  z-index: 1;
+}
+
+/* 名字、身份与关注按钮左右布局，各占一列，子栅格不受父栅格影响，是个全新的栅格布局 */
+.personal-info {
+  display: grid;
+}
+
+/* 名字 */
+.title h1 {
+  font-size: 2em;
+}
+/* 副标题颜色 */
+.title h3 {
+  color: var(--fubiaoti-text-color);
+  text-shadow: 1px 1px 1px #8b8b8bdd;
+  margin: 0px 0 8px 0;
+  font-size: 15px;
+  /* 设置文字斜体，但我做的模拟打字动画效果自带倾斜了，所以隐藏掉字体的斜体效果
+  font-style: italic; */
+
+}
+/* 模拟打字的动画效果1，在width更改文字的字符长度ch */
+.typing-demo-1 {
+  width: 23ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  /* 给整体设置倾斜效果
+  transform: skewX(-15deg);  */
+
+  /* 更改动画整体的时间 */
+  animation: typing 2.5s steps(22), blink .5s step-end infinite alternate;
+
+}@keyframes typing {
+  from {
+    width: 0
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+/* 模拟打字的动画效果2，在width更改文字的字符长度 */
+.typing-demo-2 {
+  width: 21ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  /* 给整体设置倾斜效果
+  transform: skewX(-15deg); */ 
+
+    /* 更改动画整体的时间 */
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+}@keyframes typing {
+  from {
+    width: 0
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+/* 按钮 */
+.follow-btn {
+  justify-self: end;
+  height: 30px;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 0 27px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 30px;
+}
+
+.aa{
+  margin: 0px;
+  font-size: 25px;
+}
+
+/* 动效按钮部分 */
+.custom-btn {
+  margin: 5px;
+  color: #fff;
+  border-radius: 5px;
+  max-width: 100%;
+  padding: 10px 25px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-16 {
+  border: none;
+  color: var(--text-color-dark-gray);
+  white-space: nowrap;
+  border-radius: 5px;
+  z-index: 3;
+}
+.btn-16:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  transition: all 0.6s ease;
+}
+.btn-16:hover {
+  color: #86ccff;
+  border-radius: 5px;
+}
+.btn-16:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+  border-radius: 5px;
+}
+.btn-16:active {
+  top: 2px;
+  border-radius: 5px;
+}
+
+/*设置图标间距*/
+
+/* 关注按钮的加号 */
+.follow-btn .fas {
+  font-size: 10px;
+  margin-right: 6px;
+  
+}
+
+/* 关于我部分 */
+.网站简介 {
+  color: var(--text-color-dark-gray);
+  font-weight: 300;
+  text-align: justify;
+  z-index: 2;
+}
+
+/* 社交按钮部分 */
+footer {
+  margin:auto auto 0px 0px;
+}
+
+footer ul {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+footer .fab {
+  color: var(--primary-color);
+  font-size: 24px;
+}
+/* ********************************* */
+
+/* 工作经历，一共3条工作经历，所以创建了3行栅格布局 */
+.work-exps {
+  .about-me {
+    color: var(--text-color-dark-gray);
+    font-weight: 300;
+    text-align: justify;
+    z-index: 2;
+}
+
+/* 每个工作经历为三列栅格布局，分别为职位，分隔线、公司名和工作时间部分 */
+.work-exp-item {
+  display: grid;
+  /* 列之间的比例 */
+  grid-template-columns: 10fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 职位 */
+.position {
+  font-size: 18px;
+}
+/* 分隔线 */
+.seperator {
+  height: 43px;
+  /* width: 1px; */
+  border-left: 2px dotted #eaeff2;
+}
+
+/* 工作时间 */
+.time {
+  color: var(--text-color-light-gray);
+}
+
+/* 公司 */
+.company {
+  font-size: 14px;
+  color: var(--text-color-dark-gray);
+  margin-top: 9px;
+}
+
+}
+
+/* 微信按钮点击后的弹窗样式 */
+    dialog {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      /* 弹窗背景颜色 */
+      background: linear-gradient(30deg, #7abaff94, rgba(255, 113, 203, 0.482));
+      /* 弹窗边框粗细和颜色 */
+      border: 2px solid rgba(133, 253, 249, 0.56);
+      /* 弹窗边框圆角程度 */
+      border-radius: 15px;
+      /* 设置弹窗的大小(内边距) */
+      padding: 22px;
+    }
+
+    /* 设置点击按钮后模糊页面的其余部分,blur越大越模糊 */
+    dialog::backdrop {
+      backdrop-filter: blur(7px);
+    }
+
+    .dialog-content {
+      display: flex;
+      /* 垂直排列 */
+      flex-direction: column;
+    }
+
+
+  /* 微信图标弹窗内按钮部分 */
+    .custom-btn-TC {
+      /* 设置弹窗中按钮的上下间距 */
+      margin: 20px;
+      color: rgb(255, 255, 255);
+      border-radius: 12px;
+      max-width: 100%;
+      padding: 10px 25px;
+      /* 按钮字体大小 */
+      font-size: 18px;
+      font-weight: bold;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+      7px 7px 20px 0px rgba(0,0,0,.1),
+      4px 4px 5px 0px rgba(0,0,0,.1);
+      outline: none;
+    }
+    .btn-17 {
+      border: none;
+      color: var(--text-color-dark-gray);
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .btn-17:after {
+      position: absolute;
+      border-radius: 12px;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      direction: rtl;
+      z-index: -1;
+      box-shadow:
+      -7px -7px 20px 0px #fff9,
+      -4px -4px 5px 0px #fff9,
+      7px 7px 20px 0px #0002,
+      4px 4px 5px 0px #0001;
+      transition: all 0.6s ease;
+    }
+    .btn-17:hover {
+      color: #86ccff;
+      border-radius: 12px;
+    }
+    .btn-17:hover:after {
+      left: auto;
+      right: 0;
+      width: 100%;
+      border-radius: 12px;
+    }
+    .btn-17:active {
+      top: 2px;
+      border-radius: 12px;
+    }
+  /* 弹窗内按钮部分👆 */
+
+/* 微信按钮的浏览器弹窗样式👆 */
+
+
+
+/* 鼠标跟随特效在url替换图片 */
+.MouseGS{
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  background-image: url('/static/picture/cat2.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
