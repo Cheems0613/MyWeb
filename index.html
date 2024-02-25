@@ -13,7 +13,7 @@
   <!-- 微信二维码路径 -->
   <link rel="img" href="static/picture/WX.png">
 
-  <title>江海陈伯坛陈伟’s网站</title>
+  <title>陈伟’s网站</title>
 
 
 </head>
@@ -60,7 +60,7 @@
             <!-- 个人简介的内容 -->
             <div class="网站简介">
               <p class="zhengwen zhengwentouyin">
-                “陈伟的网站，欢迎你的光临~~~~~~~~~~~~~~~~~~~~~”
+                “江海陈伯坛陈伟的网站，欢迎你的光临~~~~~~~~~~~~~~~~~~~~~”
               </p>
             </div>
             <!-- 社交图标 -->
@@ -68,9 +68,9 @@
               <ul>
                 <li style="margin: 0px 20px 0px 0px;" title="点击后跳转到QQ好友添加页面 ^_^">
                   <!-- 可以直接把uin=后方的数字替换为自己的QQ -->
-                  <a href="https://tool.gljlw.com/qq/?qq=3584674042" target="_blank"><svg
-                      t="1704124815233" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                      xmlns="http://www.w3.org/2000/svg" p-id="9478" width="32" height="32">
+                  <a href="https://tool.gljlw.com/qq/?qq=3584674042" target="_blank"><svg t="1704124815233" class="icon"
+                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9478" width="32"
+                      height="32">
                       <path
                         d="M511.09761 957.257c-80.159 0-153.737-25.019-201.11-62.386-24.057 6.702-54.831 17.489-74.252 30.864-16.617 11.439-14.546 23.106-11.55 27.816 13.15 20.689 225.583 13.211 286.912 6.767v-3.061z"
                         fill="#FAAD08" p-id="9479"></path>
@@ -170,24 +170,25 @@
               <div class="personal-info title">
                 <h3 class="typing-demo-2">
                   <!-- 更改文字长度后修改typing-demo-2的ch长度 -->
-                  <哈喽哈喽哈喽哈喽哈喽哈喽>
+                  <哈喽哈喽哈喽哈喽哈喽>
                 </h3>
               </div>
 
               <div>
                 <button class="custom-btn btn-16 zhengwentouyin2"
+                  onclick="window.open('https://www.bilibili.com/', '_blank');">刷会哔哩哔哩</button>
+                <button class="custom-btn btn-16 zhengwentouyin2"
                   onclick="window.open('https://cn.bing.com/', '_blank');">必应搜索</button>
-                  <button class="custom-btn btn-16 zhengwentouyin2"
-                    onclick="window.open('https://baidu.com/', '_blank');">百度一下</button>
-                      <button class="custom-btn btn-16 zhengwentouyin2"
-                        onclick="window.open('https://pvz.wan1234.com/', '_blank');">玩会经典小游戏</button>
-                        <button class="custom-btn btn-16 zhengwentouyin2"
-                          onclick="window.open('https://www.4399.com/', '_blank');">去4399玩会</button>
+                <button class="custom-btn btn-16 zhengwentouyin2"
+                  onclick="window.open('http://jspvz.com/plantsvszombies.htm', '_blank');">植物大战僵尸</button>
+                <button class="custom-btn btn-16 zhengwentouyin2"
+                  onclick="window.open('https://play2048.co/', '_blank');">玩会2048</button>
+                <button class="custom-btn btn-16 zhengwentouyin2"
+                  onclick="window.open('https://honghurumeng.itch.io/ylgy-free-game', '_blank');">羊了个羊</button>
 
-                    
 
                 <button class="custom-btn btn-16 zhengwentouyin2"
-                  onclick="window.open('https://gemini.chat4ai.top/', '_blank');">跟AI机器人聊会天</button>
+                  onclick="window.open('https://gemini.chat4ai.top/', '_blank');">AI对话机器人</button>
 
               </div>
             </div>
@@ -204,21 +205,21 @@
         </aside>
 
 
-      <!-- 微信按钮弹窗的内容 -->
-      <dialog id="popup">
-        <div class="dialog-content">
-          <button class="custom-btn-TC btn-17" onclick="scanQRCode()">扫码添加</button>
-          <button class="custom-btn-TC btn-17" onclick="copyWechatID()">复制微信号并跳转</button>
-          <button class="custom-btn-TC btn-17" onclick="closePopup()">我点错啦</button>
-        </div>
-      </dialog>
-      <!-- 弹窗内容↑ -->
+        <!-- 微信按钮弹窗的内容 -->
+        <dialog id="popup">
+          <div class="dialog-content">
+            <button class="custom-btn-TC btn-17" onclick="scanQRCode()">扫码添加</button>
+            <button class="custom-btn-TC btn-17" onclick="copyWechatID()">复制微信号并跳转</button>
+            <button class="custom-btn-TC btn-17" onclick="closePopup()">Sorry，点错了</button>
+          </div>
+        </dialog>
+        <!-- 弹窗内容↑ -->
+      </div>
+
     </div>
 
-  </div>
-
-  <!-- sakura shader -->
-  <script id="sakura_point_vsh" type="x-shader/x_vertex">
+    <!-- sakura shader -->
+    <script id="sakura_point_vsh" type="x-shader/x_vertex">
 uniform mat4 uProjection;
 uniform mat4 uModelview;
 uniform vec3 uResolution;
@@ -311,8 +312,8 @@ void main(void) {
 }
 </script>
 
-  <!-- 樱花花瓣阴影亮度在下面的col *= mix(2.2, 1.0, pow(abs(coord.x), 0.3));调整 -->
-  <script id="sakura_point_fsh" type="x-shader/x_fragment">
+    <!-- 樱花花瓣阴影亮度在下面的col *= mix(2.2, 1.0, pow(abs(coord.x), 0.3));调整 -->
+    <script id="sakura_point_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -386,8 +387,8 @@ void main(void) {
     gl_FragColor = vec4(col * 0.5, alpha);
 }
 </script>
-  <!-- effects -->
-  <script id="fx_common_vsh" type="x-shader/x_vertex">
+    <!-- effects -->
+    <script id="fx_common_vsh" type="x-shader/x_vertex">
 uniform vec3 uResolution;
 attribute vec2 aPosition;
 
@@ -401,11 +402,11 @@ void main(void) {
 }
 </script>
 
-  <!-- 可以在col = mix(vec3处更改网页整体的背景颜色
+    <!-- 可以在col = mix(vec3处更改网页整体的背景颜色
 原始代码为col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);-->
 
 
-  <script id="bg_fsh" type="x-shader/x_fragment">
+    <script id="bg_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -428,7 +429,7 @@ void main(void) {
 </script>
 
 
-  <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
+    <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -444,7 +445,7 @@ void main(void) {
     gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
 }
 </script>
-  <script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
+    <script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -465,8 +466,8 @@ void main(void) {
     gl_FragColor = col / 5.0;
 }
 </script>
-  <!-- effect fragment shader template -->
-  <script id="fx_common_fsh" type="x-shader/x_fragment">
+    <!-- effect fragment shader template -->
+    <script id="fx_common_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -481,8 +482,8 @@ void main(void) {
     gl_FragColor = texture2D(uSrc, texCoord);
 }
 </script>
-  <!-- post processing -->
-  <script id="pp_final_vsh" type="x-shader/x_vertex">
+    <!-- post processing -->
+    <script id="pp_final_vsh" type="x-shader/x_vertex">
 uniform vec3 uResolution;
 attribute vec2 aPosition;
 varying vec2 texCoord;
@@ -493,7 +494,7 @@ void main(void) {
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
 </script>
-  <script id="pp_final_fsh" type="x-shader/x_fragment">
+    <script id="pp_final_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -515,104 +516,104 @@ void main(void) {
     gl_FragColor.a = 1.0;
 }
 </script>
-  <!-- partial -->
-  <script src="static/js/script.js"></script>
-  <script src="static/js/index.js"></script>
+    <!-- partial -->
+    <script src="static/js/script.js"></script>
+    <script src="static/js/index.js"></script>
 
-  <!-- 微信图标的弹窗 -->
-  <script>
-    function openPopup() {
-      document.getElementById("popup").showModal();
-      return false;
-    }
-
-    function closePopup() {
-      document.getElementById("popup").close();
-    }
-
-    function scanQRCode() {
-      // 把此处的路径替换为自己的微信二维码即可在按钮点击后弹出微信二维码
-      window.open("static/picture/WX.png", "_blank");
-    }
-
-    function copyWechatID() {
-      // 获取要复制的微信号weixin文本
-      var textToCopy = "Cw--0613";
-
-      // 检查浏览器是否支持 navigator.clipboard API
-      if (navigator.clipboard) {
-        // 浏览器支持 navigator.clipboard API
-
-        // 使用 navigator.clipboard.writeText() 方法复制文本到剪贴板
-        navigator.clipboard.writeText(textToCopy).then(function () {
-          // 成功复制文本到剪贴板
-          alert("已经复制好微信号啦，点击确定后将跳转到微信^_^/");
-
-          // 跳转到微信
-          window.location.href = "weixin://";
-        }, function () {
-          // 复制文本到剪贴板失败
-          alert("复制微信号失败，请重试！");
-        });
-      } else {
-        // 浏览器不支持 navigator.clipboard API，您需要使用其他方法来复制文本
+    <!-- 微信图标的弹窗 -->
+    <script>
+      function openPopup() {
+        document.getElementById("popup").showModal();
+        return false;
       }
-    }
-  </script>
-  <!-- 微信弹窗👆 -->
 
-  <!-- 鼠标跟随特效的JS -->
-  <script>
-    let img = document.querySelector('.MouseGS')
-    // 定义小图片的旋转角度
-    let deg = 0
-    // 定义小图片位于网页左侧的位置
-    let imgx = 0
-    // 定义小图片位于网页顶部的位置
-    let imgy = 0
-    // 定义小图片x轴的位置
-    let imgl = 0
-    // 定义小图片y轴的位置
-    let imgt = 0
-    // 定义小图片翻转的角度
-    let y = 0
-    // 定义一个计数器
-    let index = 0
-
-    window.addEventListener('mousemove', function (xyz) {
-      // 获取网页左侧距离的图片位置
-      imgx = xyz.x - img.offsetLeft - img.clientWidth / 2
-      // 多去网页顶部距离图片的位置
-      imgy = xyz.y - img.offsetTop - img.clientHeight / 2
-      // 套入公式，定义图片的旋转角度
-      deg = 360 * Math.atan(imgy / imgx) / (2 * Math.PI)
-      // 每当鼠标移动的时候重置index
-      index = 0
-      // 定义当前鼠标的位置
-      let x = event.clientX
-      // 当鼠标的x轴大于图片的时候，图标就要对着鼠标，所以需要将图片翻转过来
-      // 否则就不用翻转
-      if (img.offsetLeft < x) {
-        y = -180
-      } else {
-        y = 0
+      function closePopup() {
+        document.getElementById("popup").close();
       }
-    })
-    setInterval(() => {
-      // 设置小图片的旋转和翻转
-      img.style.transform = "rotateZ(" + deg + "deg) rotateY(" + y + "deg)"
-      index++
-      // 在这里设置小图片的位置和速度，并判断小图片到达鼠标位置时停止移动
-      if (index < 50) {
-        imgl += imgx / 50
-        imgt += imgy / 50
-      }
-      img.style.left = imgl + "px"
-      img.style.top = imgt + "px"
-    }, 10)
-  </script>
 
-  </script>
+      function scanQRCode() {
+        // 把此处的路径替换为自己的微信二维码即可在按钮点击后弹出微信二维码
+        window.open("static/picture/WX.png", "_blank");
+      }
+
+      function copyWechatID() {
+        // 获取要复制的微信号weixin文本
+        var textToCopy = "Cw--0613";
+
+        // 检查浏览器是否支持 navigator.clipboard API
+        if (navigator.clipboard) {
+          // 浏览器支持 navigator.clipboard API
+
+          // 使用 navigator.clipboard.writeText() 方法复制文本到剪贴板
+          navigator.clipboard.writeText(textToCopy).then(function () {
+            // 成功复制文本到剪贴板
+            alert("已经复制好微信号啦，点击确定后将跳转到微信^_^/");
+
+            // 跳转到微信
+            window.location.href = "weixin://";
+          }, function () {
+            // 复制文本到剪贴板失败
+            alert("复制微信号失败，请重试！");
+          });
+        } else {
+          // 浏览器不支持 navigator.clipboard API，您需要使用其他方法来复制文本
+        }
+      }
+    </script>
+    <!-- 微信弹窗👆 -->
+
+    <!-- 鼠标跟随特效的JS -->
+    <script>
+      let img = document.querySelector('.MouseGS')
+      // 定义小图片的旋转角度
+      let deg = 0
+      // 定义小图片位于网页左侧的位置
+      let imgx = 0
+      // 定义小图片位于网页顶部的位置
+      let imgy = 0
+      // 定义小图片x轴的位置
+      let imgl = 0
+      // 定义小图片y轴的位置
+      let imgt = 0
+      // 定义小图片翻转的角度
+      let y = 0
+      // 定义一个计数器
+      let index = 0
+
+      window.addEventListener('mousemove', function (xyz) {
+        // 获取网页左侧距离的图片位置
+        imgx = xyz.x - img.offsetLeft - img.clientWidth / 2
+        // 多去网页顶部距离图片的位置
+        imgy = xyz.y - img.offsetTop - img.clientHeight / 2
+        // 套入公式，定义图片的旋转角度
+        deg = 360 * Math.atan(imgy / imgx) / (2 * Math.PI)
+        // 每当鼠标移动的时候重置index
+        index = 0
+        // 定义当前鼠标的位置
+        let x = event.clientX
+        // 当鼠标的x轴大于图片的时候，图标就要对着鼠标，所以需要将图片翻转过来
+        // 否则就不用翻转
+        if (img.offsetLeft < x) {
+          y = -180
+        } else {
+          y = 0
+        }
+      })
+      setInterval(() => {
+        // 设置小图片的旋转和翻转
+        img.style.transform = "rotateZ(" + deg + "deg) rotateY(" + y + "deg)"
+        index++
+        // 在这里设置小图片的位置和速度，并判断小图片到达鼠标位置时停止移动
+        if (index < 50) {
+          imgl += imgx / 50
+          imgt += imgy / 50
+        }
+        img.style.left = imgl + "px"
+        img.style.top = imgt + "px"
+      }, 10)
+    </script>
+
+    </script>
 
 
 </body>
